@@ -41,10 +41,9 @@ app.use(new UiAdmin())
 config.configs = myconfig
 
 
-// 默认控制器
+
 @Controller
 class IndexController {
-  // 首页
   @Get('/')
   home(req, res) {
     res.send("<div style='text-align:center'><a href='/xyadmin/'>แบ็กเอนด์UiAdmin</a>，user: admin pass: uiadmin。</div><iframe style='width: 100%;height: calc(100vh - 20px)' src='/xyadmin/'></iframe>")
@@ -52,20 +51,20 @@ class IndexController {
 }
 app.use(new IndexController())
 
-// 文章管理后台控制器（演示DEMO）
+
 @Controller
 class DemoController {
   @RootUrl('/api')
   url() {}
 
-  @MenuItem({title: "文章列表", path: "/demo/lists", pmenu: "/content", menuType: 1,
+  @MenuItem({title: "รายการบทความ", path: "/demo/lists", pmenu: "/content", menuType: 1,
     routeType: "list", apiSuffix: "", apiParams: "", apiMethod: "GET", sortnum: 0})
   @Get('/v1/admin/demo/lists')
   lists(req, res) {
     let dataList = [
       {
-        "title": "测试文章1",
-        "cate": "开发",
+        "title": "รายการที่ 1",
+        "cate": "แอดมิน",
         "cover": "https://ts2.cn.mm.bing.net/th?id=ORMS.11d30098d0f4a79a42c6352014e0f066&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=2&p=0",
         "level": 1,
         "progress": 50,

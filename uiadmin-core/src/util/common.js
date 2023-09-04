@@ -8,7 +8,7 @@ const config = {
   configs: {
       "uiadmin": {
           "site": {
-              "title": "Admin-Gmthai",
+              "title": "Admin",
               "logo": "",
               "logoTitle": "",
               "logoBadge": ""

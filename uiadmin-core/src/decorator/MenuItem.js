@@ -1,10 +1,7 @@
 var menuList = [];
 
 
-/*
- * 菜单装饰器
- * 注解应用后会自动生成uiadmin后台的菜单
- */
+
 function MenuItem(options) {
     let params = {
         title: '',
