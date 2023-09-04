@@ -4,10 +4,6 @@ class XyBuilderList {
       this.data = {}
   }
 
-  /**
-   * 初始化
-   * @author jry <ijry@qq.com>
-   */
   init() {
       this.data = {
           'alertList': {
@@ -41,27 +37,16 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 设置配置
-   * @author jry <ijry@qq.com>
-   */
   setConfig(name, value) {
       data['config'][name] = value;
       return this;
   }
 
-  /**
-   * 添加顶部按钮
-   * @author jry <ijry@qq.com>
-   */
   addAlertItem($layer, $item) {
       data['alertList'][$layer].push($item);
   }
 
-  /**
-   * 添加顶部按钮
-   * @author jry <ijry@qq.com>
-   */
+
   addTopButton($name, $title, $pageData = [], $style = []) {
       let $btn = {};
       $btn['name'] = $name;
@@ -81,10 +66,7 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 添加右侧按钮
-   * @author jry <ijry@qq.com>
-   */
+
   addRightButton($name, $title, $pageData = [], $style = []) {
       let $btn = {};
       $btn = this.getRightButton($name, $title, $pageData, $style);
@@ -92,10 +74,7 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 构造右侧按钮
-   * @author jry <ijry@qq.com>
-   */
+
   getRightButton($name, $title, $pageData = [], $style = []) {
       let $btn = {};
       $btn['name'] = $name;
@@ -107,21 +86,16 @@ class XyBuilderList {
           'modalClosable': false,
       };
       $btn['pageData'] = {...$btn['pageData'], ...$pageData};
-      // 暂未启用，本打算在pageType=page模式下将URL优化减去v1/admin等前缀的，
-      // 因为之前按钮定义的api字段都会直接带有/v1/api/admin，后来因为iadmin、
-      // eadmin等前缀太多没启用此规范（定义按钮时没有将api拆成跟接口一样的apiPrefix、
-      // menuLayer、path三个变量主要是考虑到通用性，可以请求非本系统的接口）
-      // if ($btn['pageData']['path'] && $btn['pageData']['path'] == '') {
-      //     $btn['pageData']['path'] = ltrim($btn['pageData']['api'], '/v1');
-      // }
+     // ยังไม่ได้เปิดใช้งาน มีการวางแผนเพื่อเพิ่มประสิทธิภาพ URL ลบ v1/admin และคำนำหน้าอื่นๆ ในโหมด pageType=page，
+    // เนื่องจากฟิลด์ api ที่กำหนดโดยปุ่มก่อนหน้าจะมี /v1/api/admin โดยตรง และหลังจากนั้นเพราะ iadmin
+    // ตัวแปรทั้งสามของ menuLayer และ path นั้นมีไว้เพื่อความอเนกประสงค์เป็นหลัก และคุณสามารถขออินเทอร์เฟซอื่นนอกเหนือจากระบบนี้ได้）
+    // if ($btn['pageData']['path'] && $btn['pageData']['path'] == '') {
+    //     $btn['pageData']['path'] = ltrim($btn['pageData']['api'], '/v1');
+    // }
       $btn['style'] = $style;
       return $btn;
   }
 
-  /**
-   * 批量添加顶部按钮
-   * @author jry <ijry@qq.com>
-   */
   addTopButtons($buttons){
       for (const $value of $buttons) {
           this.addTopButton($value['name'], $value['title'], $value['pageData'], $value['style']);
@@ -129,10 +103,6 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 批量添加右侧按钮
-   * @author jry <ijry@qq.com>
-   */
   addRightButtons($buttons){
       for (const $value of $buttons) {
           this.addRightButton($value['name'], $value['title'], $value['pageData'], $value['style']);
@@ -140,10 +110,7 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 批量添加表格列
-   * @author jry <ijry@qq.com>
-   */
+
   addColums($columns){
       for (const $value of $columns) {
           this.addColumn($value['key'], $value['title'], $value['data']);
@@ -151,10 +118,7 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 添加表格列
-   * @author jry <ijry@qq.com>
-   */
+
   addColumn($name, $title, $data = []) {
       let $column = {
           'name': $name,
@@ -178,19 +142,11 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 设置列表数据
-   * @author jry <ijry@qq.com>
-   */
   setDataList($dataList) {
       this.data['dataList'] = $dataList;
       return this;
   }
 
-  /**
-   * 设置分页
-   * @author jry <ijry@qq.com>
-   */
   setDataPage($total, $limit = 10, $page = 1) {
       this.data['dataPage'] = {
           'total': $total,
@@ -200,28 +156,18 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 设置展开字段
-   * @author jry <ijry@qq.com>
-   */
+
   setExpandKey($expandKey) {
       this.data['dataListParams']['expandKey'] = $expandKey;
       return this;
   }
 
-  /**
-   * 设置数据表名
-   * @author jry <ijry@qq.com>
-   */
   setTableName($tableName) {
       this.data['dataListParams']['tableName'] = $tableName;
       return this;
   }
 
-  /**
-   * 设置选择
-   * @author jry <ijry@qq.com>
-   */
+
   setSelectType($selectType = 'checkbox') {
       if ($selectType) {
           data['dataListParams']['selectable'] = true;
@@ -232,10 +178,7 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 批量添加搜索
-   * @author jry <ijry@qq.com>
-   */
+
   addFilterItems($list) {
       for (const $v of $list) {
           if (count($v) > 1) {
@@ -245,10 +188,7 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 添加搜索
-   * @author jry <ijry@qq.com>
-   */
+
   addFilterItem(
       $name,
       $title,
@@ -265,19 +205,13 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 筛选功能其他项目
-   * @author jry <ijry@qq.com>
-   */
+
   setFilterExtra($item) {
       this.data['filterExtra'] = $item;
       return this;
   }
 
-  /**
-   * 添加一个统计
-   * @author jry <ijry@qq.com>
-   */
+
   addCount(
       $item = {'title': '', 'icon': 'xyicon xyicon-my', 'bgColor': '#f8f8f8'},
       $current = {'value': 0, 'suffix': ''},
@@ -291,10 +225,7 @@ class XyBuilderList {
       return this;
   }
 
-  /**
-   * 返回数据
-   * @author jry <ijry@qq.com>
-   */
+
   getData() {
       return this.data;
   }

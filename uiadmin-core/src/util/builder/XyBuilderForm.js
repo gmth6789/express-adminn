@@ -5,19 +5,19 @@ class XyBuilderForm {
   }
 
   $formType = {
-      'tabs': 'TABS切换',
-      'hidden': '隐藏元素',
-      'static': '静态文本',
-      'link': '跳转链接',
-      'text': '单行文本',
-      'password': '密码',
-      'url': 'URL网址',
-      'email': '邮箱',
-      'date': '日期',
-      'number': '数字',
-      'digit': '浮点型数字',
-      'tel': '手机号',
-      'textarea': '多行文本',
+      'tabs': 'สวิตช์แท็บ',
+      'hidden': 'องค์ประกอบที่ซ่อนอยู่',
+      'static': 'ข้อความคงที่',
+      'link': 'ลิ้งค์กระโดด',
+      'text': 'ข้อความ',
+      'password': 'รหัสผ่าน',
+      'url': 'URL',
+      'email': 'อีเมล์',
+      'date': 'วันที่',
+      'number': 'ตัวเลข',
+      'digit': 'หมายเลขจุดลอยตัว',
+      'tel': 'เบอร์โทร',
+      'textarea': 'ข้อความหลายบรรทัด',
       'array': '自定义数组',
       'select': '下拉框',
       'selects': '下拉框多选',
@@ -50,10 +50,7 @@ class XyBuilderForm {
       'fee': '运费模板'
   };
 
-  /**
-   * 初始化
-   * @author jry <ijry@qq.com>
-   */
+
   init() {
       this.data = {
           'alertList': {
@@ -83,46 +80,29 @@ class XyBuilderForm {
       return this;
   }
 
-  /**
-   * 设置配置
-   * @author jry <ijry@qq.com>
-   */
   setConfig($name, $value) {
       this.data['config'][$name] = $value;
       return this;
   }
 
-  /**
-   * 添加顶部提醒
-   * @author jry <ijry@qq.com>
-   */
+
   addAlertItem($layer, $item) {
       this.data['alertList'][$layer].push($item);
       return this;
   }
 
-  /**
-   * 设置tab
-   * @author jry <ijry@qq.com>
-   */
+
   addFormTab($tab) {
       this.data['formTabs'].push($tab);
       return this;
   }
 
-  /**
-   * 设置提交方法
-   * @author jry <ijry@qq.com>
-   */
+
   setFormMethod($method = 'post') {
       this.data['formMethod'] = $method;
       return this;
   }
 
-  /**
-   * 构造表单项
-   * @author jry <ijry@qq.com>
-   */
   getFormItem(
       $name,
       $title,
@@ -139,10 +119,7 @@ class XyBuilderForm {
       return $item;
   }
   
-  /**
-   * 添加表单分组
-   * @author jry <ijry@qq.com>
-   */
+
   addFormCol(
       $name,
       $span = [],
@@ -158,10 +135,7 @@ class XyBuilderForm {
       return this;
   }
 
-  /**
-   * 添加表单分组
-   * @author jry <ijry@qq.com>
-   */
+
   addFormGroup(
       $name,
       $title,
@@ -177,10 +151,7 @@ class XyBuilderForm {
       return this;
   }
 
-  /**
-   * 添加表单项目
-   * @author jry <ijry@qq.com>
-   */
+
   addFormItem(
       $name,
       $title,
@@ -199,10 +170,7 @@ class XyBuilderForm {
       return this;
   }
 
-  /**
-   * 添加表单验证
-   * @author jry <ijry@qq.com>
-   */
+
   addFormRule($name, $rule){
       if ((this.data['formTabs']).length > 0) {
           this.data['formTabs'][(this.data['formTabs']).length - 1]['formRules'][$name] = $rule;
@@ -212,19 +180,12 @@ class XyBuilderForm {
       return this;
   }
 
-  /**
-   * 设置表单数据
-   * @author jry <ijry@qq.com>
-   */
+
   setFormValues($data = []) {
       this.data['itemValues'] = $data;
       return this;
   }
 
-  /**
-   * 返回数据
-   * @author jry <ijry@qq.com>
-   */
  getData() {
       return this.data;
   }
