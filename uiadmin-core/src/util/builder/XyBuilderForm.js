@@ -44,10 +44,10 @@ class XyBuilderForm {
       'selectlist': '列表选择器',
       'checkboxtree': '树状表格复选',
       'markdown': 'Markdown',
-      'html': '富文本',
-      'tinymce': 'TinyMCE富文本',
-      'sku': '商品规格',
-      'fee': '运费模板'
+      'html': 'ข้อความที่หลากหลาย',
+      'tinymce': 'ข้อความ RichMCE ของ TinyMCE',
+      'sku': 'ข้อมูลจำเพาะของผลิตภัณฑ์',
+      'fee': 'เทมเพลตการขนส่งสินค้า'
   };
 
 

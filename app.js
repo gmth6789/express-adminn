@@ -182,7 +182,7 @@ class DemoController {
     });
   }
 
-  @MenuItem({title: "文章修改", path: "/demo/edit", pmenu: "/demo/lists", menuType: 2,
+  @MenuItem({title: "แก้ไขบทความ", path: "/demo/edit", pmenu: "/demo/lists", menuType: 2,
     routeType: "form", apiSuffix: "", apiParams: "", apiMethod: "GET", sortnum: 0})
   @Get('/v1/admin/demo/edit/:id')
   edit(req, res) {
@@ -191,25 +191,25 @@ class DemoController {
       .addFormItem("id", "ID", "text", "", {
         disabled: true
       })
-      .addFormItem("name", "文章标题", "text", "", {})
-      .addFormItem("content", "文章内容", "html", "", {})
-      .addFormItem("level", "登记", "select", "", {
+      .addFormItem("name", "ชื่อบทความ", "text", "", {})
+      .addFormItem("content", "เนื้อหาบทความ", "html", "", {})
+      .addFormItem("level", "ลงทะเบียน", "select", "", {
         options:[
-          {'title': "低", value: 1},
-          {'title': "中", value: 2},
-          {'title': "高", value: 3},
+          {'title': "ต่ำ", value: 1},
+          {'title': "กลาง", value: 2},
+          {'title': "สูง", value: 3},
         ]
       })
       .setFormValues({
         id: 123123,
         name: "text",
-        content: "测试",
+        content: "ทดสอบ",
         level: 2
       })
 
     res.json({
       code: 200,
-      msg: '成功',
+      msg: 'ความสำเร็จ',
       data: {
         formData: xyBuilderForm.getData()
       }
