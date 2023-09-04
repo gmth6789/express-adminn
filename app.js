@@ -96,51 +96,51 @@ class DemoController {
     let xyBuilderList = new XyBuilderList();
     xyBuilderList
       .init()
-      .addColumn("title", "标题", {
+      .addColumn("title", "ชื่อ", {
         type: "text"
       })
-      .addColumn("cover", "封面", {
+      .addColumn("cover", "รูปปก", {
         type: "image",
       })
-      .addColumn("cate", "分类", {
+      .addColumn("cate", "การจัดหมวดหมู่", {
         type: "tag",
         prefixType: "dot",
         options: []
       })
-      .addColumn("progress", "进度", {
+      .addColumn("progress", "สำเร็จ", {
         type: "progress"
       })
-      .addColumn("level", "评分", {
+      .addColumn("level", "คะแนน", {
         type: "rate"
       })
-      .addColumn("level", "优先级", {
+      .addColumn("level", "ลำดับความสำคัญ", {
         prefixType: "dot",
         useOptions: true,
         options: [
-          {title: "低", value: 1, color: "#c6cdd4"},
-          {title: "中", value: 2, color: "#0488de"},
-          {title: "高", value: 3, color: "#ff9d28"}
+          {title: "ต่ำ", value: 1, color: "#c6cdd4"},
+          {title: "กลาง", value: 2, color: "#0488de"},
+          {title: "สูง", value: 3, color: "#ff9d28"}
         ]
       })
-      .addColumn("createTime", "创建时间", {
+      .addColumn("createTime", "เวลาสร้าง", {
         type: "time",
       })
-      .addColumn("updateTime", "发布时间", {
+      .addColumn("updateTime", "อัพเดตล่าสุด", {
         type: "time",
       })
-      .addTopButton("add", "添加", {
-        title: "新增",
+      .addTopButton("add", "เพิ่ม", {
+        title: "ใหม่",
         pageType: "modal",
         modalType: "form",
         api: "/v1/admin/demo/add",
         width: "1000px"
       })
-      .addColumn("rightButtonList",  "操作", {
+      .addColumn("rightButtonList",  "ดำเนินงาน", {
         type: "rightButtonList",
         minWidth: "120px"
       })
-      .addRightButton("edit", "修改", {
-        title: "修改",
+      .addRightButton("edit", "ปรับปรุงใหม่", {
+        title: "ปรับปรุงใหม่",
         pageType: "modal",
         modalType: "form",
         api: "/v1/admin/demo/edit",
@@ -150,32 +150,32 @@ class DemoController {
 
     res.json({
       code: 200,
-      msg: '成功',
+      msg: 'ความสำเร็จ',
       data: {
         listData: xyBuilderList.getData()
       }
     });
   }
 
-  @MenuItem({title: "文章新增", path: "/demo/add", pmenu: "/demo/lists", menuType: 2,
+  @MenuItem({title: "บทความใหม่", path: "/demo/add", pmenu: "/demo/lists", menuType: 2,
     routeType: "form", apiSuffix: "", apiParams: "", apiMethod: "GET", sortnum: 0})
   @Get('/v1/admin/demo/add')
   add(req, res) {
     let xyBuilderForm = new XyBuilderForm();
     xyBuilderForm.init()
-      .addFormItem("name", "文章标题", "text", "", {})
-      .addFormItem("content", "文章内容", "html", "", {})
-      .addFormItem("level", "登记", "select", "", {
+      .addFormItem("name", "ชื่อบทความ", "text", "", {})
+      .addFormItem("content", "เนื้อหาบทความ", "html", "", {})
+      .addFormItem("level", "ลงทะเบียน", "select", "", {
         options:[
-          {'title': "低", value: 1},
-          {'title': "中", value: 2},
-          {'title': "高", value: 3},
+          {'title': "ต่ำ", value: 1},
+          {'title': "กลาง", value: 2},
+          {'title': "สูง", value: 3},
         ]
       })
 
     res.json({
       code: 200,
-      msg: '成功',
+      msg: 'ความสำเร็จ',
       data: {
         formData: xyBuilderForm.getData()
       }
