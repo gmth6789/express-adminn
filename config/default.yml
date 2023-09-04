@@ -1,7 +1,7 @@
 uiadmin:
   site:
     # ชื่อเว็บไซต์
-    title: "Admin-Dashboard"
+    title: "ระบบหลังบ้าน"
     logo: "https://s1.ax1x.com/2023/07/28/pCzWg2Q.png"
     logoTitle: "https://s1.ax1x.com/2023/07/28/pCzWg2Q.png"
     logoBadge: "https://s1.ax1x.com/2023/07/28/pCzWg2Q.png"
@@ -12,12 +12,12 @@ uiadmin:
     user-role:
       - id: 1
         name: super_admin
-        title: 超级管理员
+        title: ผู้ดูแลระบบขั้นสูง
         menus: ""
         status: 1
       - id: 2
         name: admin
-        title: 管理员
+        title: ผู้ดูแลระบบ
         menus:
           - "/v1/admin/demo/lists"
         status: 1
