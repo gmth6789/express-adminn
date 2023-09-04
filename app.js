@@ -46,7 +46,7 @@ config.configs = myconfig
 class IndexController {
   @Get('/')
   home(req, res) {
-    res.send("<div style='text-align:center'><a href='/xyadmin/'>แบ็กเอนด์UiAdmin</a>，user: admin pass: uiadmin。</div><iframe style='width: 100%;height: calc(100vh - 20px)' src='/xyadmin/'></iframe>")
+    res.send("<div style='text-align:center'><a href='/xyadmin/'>ทางเข้าหลังบ้าน</a>，user: admin pass: uiadmin。</div><iframe style='width: 100%;height: calc(100vh - 20px)' src='/xyadmin/'></iframe>")
   }
 }
 app.use(new IndexController())
