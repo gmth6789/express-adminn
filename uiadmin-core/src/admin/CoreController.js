@@ -231,7 +231,7 @@ class CoreController {
                                   "value": "0"
                               },
                               "content": {
-                                  "value": "今日新增"
+                                  "value": "เพิ่มวันนี้"
                               }
                           },
                           {
@@ -245,7 +245,7 @@ class CoreController {
                                   "value": "0"
                               },
                               "content": {
-                                  "value": "总消费"
+                                  "value": "การบริโภคทั้งหมด"
                               }
                           },
                           {
@@ -259,7 +259,7 @@ class CoreController {
                                   "value": "0"
                               },
                               "content": {
-                                  "value": "今日消费"
+                                  "value": "การบริโภคในวันนี้"
                               }
                           }
                       ],
@@ -267,31 +267,31 @@ class CoreController {
               },
               {
                       "type": "card",
-                      "title": "系统信息",
+                      "title": "ข้อความระบบ",
                       "content": [
                           {
                               "type": "text",
-                              "title": "服务器IP",
+                              "title": "ไอพีเซิร์ฟเวอร์",
                               "value": ""
                           },
                           {
                               "type": "text",
-                              "title": "WEB服务器",
+                              "title": "เว็บเซิร์ฟเวอร์",
                               "value": ""
                           },
                           {
                               "type": "text",
-                              "title": "JDK版本",
+                              "title": "เวอร์ชั่นเจดีเค",
                               "value": ""
                           },
                           {
                               "type": "text",
-                              "title": "服务器时间",
+                              "title": "เวลาเซิร์ฟเวอร์",
                               "value": ""
                           },
                           {
                               "type": "text",
-                              "title": "官方网站",
+                              "title": "เว็บไซต์อย่างเป็นทางการ",
                               "value": "https://jiangruyi.com(ijry@qq.com)"
                           }
                       ],
@@ -299,26 +299,26 @@ class CoreController {
               },
               {
                       "type": "card",
-                      "title": "项目信息",
+                      "title": "ข้อมูลโครงการ",
                       "content": [
                           {
                               "type": "text",
-                              "title": "项目名称",
+                              "title": "ชื่อโครงการ",
                               "value": ""
                           },
                           {
                               "type": "text",
-                              "title": "项目口号",
+                              "title": "สโลแกนโครงการ",
                               "value": ""
                           },
                           {
                               "type": "text",
-                              "title": "项目简介",
+                              "title": "รายละเอียดโครงการ",
                               "value": ""
                           },
                           {
                               "type": "text",
-                              "title": "ICP备案号",
+                              "title": "หมายเลขบันทึก ICP",
                               "value": ""
                           }
                       ],
