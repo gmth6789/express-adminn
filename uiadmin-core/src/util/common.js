@@ -1,4 +1,3 @@
-// 获取无限级对象的值 
 const getDeepVal = (key, data) => {
   return key.split('.').reduce((p, c) => {
     return p && p[c];
@@ -9,7 +8,7 @@ const config = {
   configs: {
       "uiadmin": {
           "site": {
-              "title": "UiAdmin-express",
+              "title": "Admin-Gmthai",
               "logo": "",
               "logoTitle": "",
               "logoBadge": ""
@@ -23,14 +22,14 @@ const config = {
                   {
                       "id": 1,
                       "name": "super_admin",
-                      "title": "超级管理员",
+                      "title": "ผู้ดูแลระบบขั้นสูง",
                       "menus": "",
                       "status": 1
                   },
                   {
                       "id": 2,
                       "name": "admin",
-                      "title": "管理员",
+                      "title": "ผู้ดูแลระบบ",
                       "status": 1,
                       "menus": [
                           "/v1/admin/demo/lists"
